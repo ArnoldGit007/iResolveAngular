@@ -1,0 +1,29 @@
+<body>
+    <div class="container">
+      <div class="row" style="margin-top: 10px;">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex">
+              <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body">
+              <ngb-tabset [justify]="currentJustify">
+                <ngb-tab>
+                  <ng-template ngbTabTitle><b>Login</b></ng-template>
+                  <ng-template ngbTabContent>
+                    <app-login (updateLoggedInUser)="setLoggedInUser($event)"></app-login>
+                  </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                  <ng-template ngbTabTitle><b>Registration</b></ng-template>
+                  <ng-template ngbTabContent>
+                    <app-registration></app-registration>
+                  </ng-template>
+                </ngb-tab>
+              </ngb-tabset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
