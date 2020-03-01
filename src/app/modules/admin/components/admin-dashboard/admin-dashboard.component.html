@@ -1,2 +1,37 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Roles</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let inactivatedUser of inactivatedUsers">
+    <th scope="row">{{ inactivatedUser.FirstName }}</th>
+    <td>{{ inactivatedUser.LastName}}</td>
+    <td>
+        <select (change)="selecteRoleForUser($event, inactivatedUser)">
+            <option *ngFor="let role of availableRoles" value="{{role.Id}}"> 
+                {{role.Code}}
+            </option>
+        </select>
+    </td>
+    <td>
+        <button (click)="activateUser(inactivatedUser)" > Activate </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
 
-<p>admin-dashboard works!</p>
+<!-- <div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+  </ngb-pagination>
+
+  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+    <option [ngValue]="2">2 items per page</option>
+    <option [ngValue]="4">4 items per page</option>
+    <option [ngValue]="6">6 items per page</option>
+  </select> -->
+<!-- </div> -->
